@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect, ReactNode, useState } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
 import { 
   AppState, 
   StudyTopic, 
@@ -269,33 +269,32 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 // Provider
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Load from storage on mount
-  useEffect(() => {
-    console.log("Attempting to load state from localStorage...");
-    const saved = loadFromStorage<AppState | null>(null);
-    console.log("Loaded saved state:", saved);
-
-    if (saved) {
-      const mergedState: AppState = {
-        ...initialState,
-        ...saved,
-        copilotTopicId: null, // Always start with copilot closed
-      };
-      dispatch({ type: 'SET_STATE', payload: mergedState });
+  // Load from storage on initialization (lazy)
+  const init = (defaultState: AppState): AppState => {
+    try {
+      console.log("Attempting to load state from localStorage (lazy)...");
+      const saved = loadFromStorage<AppState | null>(null);
+      console.log("Loaded saved state:", saved);
+      if (saved) {
+        return {
+          ...defaultState,
+          ...saved,
+          copilotTopicId: null, // Always start with copilot closed
+        };
+      }
+    } catch (error) {
+      console.error("Failed to initialize state:", error);
     }
-    setIsLoading(false);
-  }, []);
+    return defaultState;
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState, init);
 
   // Save to storage on state change
   useEffect(() => {
-    if (!isLoading) {
-      console.log("Saving state to localStorage:", state);
-      saveToStorage(state);
-    }
-  }, [state, isLoading]);
+    console.log("Saving state to localStorage:", state);
+    saveToStorage(state);
+  }, [state]);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
