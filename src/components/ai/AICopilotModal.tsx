@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { X, Send, Sparkles, User } from 'lucide-react';
 import { getAIResponse } from '../../services/aiService';
 

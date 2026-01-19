@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   CheckCircle2, 
   AlertTriangle, 
@@ -6,7 +6,6 @@ import {
   Clock, 
   List,
   ArrowRight,
-  CalendarDays,
   Hammer
 } from 'lucide-react';
 

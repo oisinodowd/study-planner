@@ -108,6 +108,7 @@ export interface AppState {
   practiceTests: PracticeTest[];
   subjectGrades: SubjectGrade[];
   pomodoroSettings: PomodoroSettings;
+  copilotTopicId: string | null;
 }
 
 export type ViewMode = 'dashboard' | 'calendar' | 'topics' | 'flashcards' | 'calculator' | 'tests' | 'pomodoro' | 'plan';

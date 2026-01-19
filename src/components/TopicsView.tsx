@@ -199,7 +199,7 @@ export function TopicsView() {
           onClose={() => setShowScheduleModal(null)}
           onSchedule={(session) => {
             dispatch({ type: 'ADD_SESSION', payload: session });
-            setShowScheduleModal(false);
+            setShowScheduleModal(null);
           }}
         />
       )}
