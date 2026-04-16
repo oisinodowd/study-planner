@@ -13,7 +13,7 @@ export default {
           200: '#c7cfc7',
           300: '#a3b0a3',
           400: '#7d8f7d',
-          500: '#627362',
+          500: '#5c735c', // Slightly desaturated
           600: '#4d5c4d',
           700: '#404b40',
           800: '#363e36',
@@ -23,15 +23,15 @@ export default {
         cream: {
           50: '#fefef9',
           100: '#fcfbf0',
-          200: '#f8f5de',
-          300: '#f2ecc4',
-          400: '#e9dea2',
-          500: '#dece80',
-          600: '#cfb85d',
-          700: '#b89a47',
-          800: '#967c3d',
-          900: '#7a6535',
-          950: '#42361a',
+          200: '#f6f2dd', // Slightly darker for readability
+          300: '#f0e8c0',
+          400: '#e7da9e',
+          500: '#dcc97e',
+          600: '#cfae5c',
+          700: '#b89246',
+          800: '#94763c',
+          900: '#795f34',
+          950: '#42321a',
         },
         midnight: {
           50: '#f4f6f7',
@@ -58,6 +58,19 @@ export default {
           800: '#8b422d',
           900: '#733a2a',
           950: '#3e1b12',
+        },
+        gold: {
+          50: '#fffdf6',
+          100: '#fefae0',
+          200: '#f9f1b4',
+          300: '#f2e08a', // Muted for readability
+          400: '#e7cc61',
+          500: '#d8b53d', // Deeper, more earthy
+          600: '#c09b2e',
+          700: '#a17e23',
+          800: '#82641a',
+          900: '#684f13',
+          950: '#3c2b09',
         },
       },
       fontFamily: {

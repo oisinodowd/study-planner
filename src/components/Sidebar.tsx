@@ -84,7 +84,7 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
       <div className="p-4 border-t border-midnight-800">
         <div className="bg-gradient-to-br from-sage-900/50 to-terracotta-900/30 rounded-xl p-4">
           <p className="text-xs text-cream-200/70 font-body leading-relaxed">
-            Leaving Cert 2025
+            Leaving Cert 2026
           </p>
           <p className="text-sm text-cream-100 font-body mt-1">
             Stay focused. You've got this.
